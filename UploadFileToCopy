@@ -1,0 +1,10 @@
+<form  action="copy.php" autocomplete="on" id="form-validate" method="post" enctype="multipart/form-data"> 
+    <p> 
+                                    <label class="uname" data-icon="">How many times you want to copy this file</label>
+                                    <input name="times"type="text" placeholder="1234" />
+                                </p>
+<p> 
+                                    <label for="usernamesignup" class="usernamesignup" data-icon="">Upload your file here </label>
+<input type="file" name="file" >
+<p class="signin button">							<input class="signin button" type="submit" title="Search" value="Add"/></p>
+</form>
