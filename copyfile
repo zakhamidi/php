@@ -1,0 +1,20 @@
+<?php
+$times=$_POST['times'];
+if(is_numeric($times)){
+	$filename='files/'.basename($_FILES["file"]["name"]);
+	$extension=pathinfo($filename,PATHINFO_EXTENSION);
+	move_uploaded_file($_FILES["file"]["tmp_name"],$filename);
+	$fileDesname=substr($filename,0,strpos($filename, '.'));
+	for ($i=0;$i<$times;$i++){
+		$fileDestination=$fileDesname.$i.'.'.$extension;
+		if(!file_exists($fileDestination)){
+		copy($filename,$fileDestination);
+	//sleep(5);
+		}
+	}
+	echo 'files copied '.$i.' times';
+}
+else{
+	echo 'you need to input numbers !!';
+}
+?>
